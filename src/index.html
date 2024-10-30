@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="bg-rose-50">
+  
+
+ 
+    <div class="container mb-4 ml-36 mt-8">
+      <p class="text-3xl  font-bold">Dessert</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+      <!-- Product list card -->
+      <div class="container ml-24  space-y-3">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="root">
+              <!-- Card -->
+              <div class="bg-white border rounded-lg p-4 shadow-md">
+                  <!-- Product Content -->
+                  <p class="font-bold">Product 1</p>
+                  <p class="text-gray-600">$10.00</p>
+              </div>
+              <div class="bg-white border rounded-lg p-4 shadow-md">
+                  <!-- Product Content -->
+                  <p class="font-bold">Product 2</p>
+                  <p class="text-gray-600">$15.00</p>
+              </div>
+              <div class="bg-white border rounded-lg p-4 shadow-md">
+                  <!-- Product Content -->
+                  <p class="font-bold">Product 3</p>
+                  <p class="text-gray-600">$20.00</p>
+              </div>
+              <!-- Add more product cards as needed -->
+          </div>
+      </div>
+  
+      <!-- Check Out Card -->
+      <div class="container mx-auto p-6 w-11/12 md:w-8/12 border bg-white rounded-xl shadow-lg">
+        <p class="text-2xl font-bold mb-5" id="cart">Your Cart: <span id="count">0</span></p>
+    
+        <div id="cartItem" class="p-4">
+            <img src="../assets/images/empty.png" alt="" class="w-32 h-32 mx-auto">
+            <p class="font-bold text-gray-400 text-center">Your Added Items Will Appear Here</p>
+        </div>
+    
+        <div class="flex justify-between items-center mt-6 m-auto">
+            <p class="font-bold text-lg">Order Total</p>
+            <p class="font-bold text-xl" id="total">$0</p>
+        </div>
+   
+  
+          <!-- Confirm order -->
+          <div>
+              <p class="font-bold text-xs text-gray-600 bg-slate-100 rounded-xl py-2 text-center mt-4">This is a carbon neutral delivery</p>
+              <button onclick="openModal()" class="bg-rose-600 rounded-full p-4 w-full mt-3 font-medium text-white hover:bg-rose-500 transition">
+                  Confirm Order
+              </button>
+
+              
+                <!-- Order Confirmation Modal -->
+                <div id="orderConfirmationModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+                  <div class="relative bg-white rounded-lg p-8 w-11/12 max-w-md mx-auto">
+                      <span class="absolute top-2 right-2 text-gray-500 text-2xl cursor-pointer" onclick="closeModal()">&times;</span>
+                     
+                      <!-- Cart Items List -->
+                      <div id="cartItemsList" class="mb-6 mt-4 text-gray-700">
+                          <!-- This is where the selected cart items will be displayed -->
+                      </div>
+                     <!--  <div class="flex justify-between items-center pt-4 space-x-10">
+                        <span class="text-lg font-bold text-gray-700">Total Amount</span>
+                      <!   <span class="text-lg font-bold text-rose-600 ml-4">$</span> <Added margin-left -->
+                     
+                      <!-- ${totalPrice.toFixed(2)} -->
+
+                      <div>
+                       
+                      </div>
+
+                     
+                      <button onclick="redirectToHomepage()" class="bg-rose-600 hover:bg-rose-500 text-white font-semibold py-2 px-6 rounded-full w-full">
+                          OK
+                      </button>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+  
+   
+
+     <script src="./js/scirpt.js">
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Increment/Decrement with Hover Effect</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+    <div class="text-center">
+        <h1 class="text-2xl font-bold mb-4">Number: <span id="number" class="text-3xl">0</span></h1>
+        
+        <!-- Element that will disappear on hover -->
+        <div class="transition-opacity duration-300" id="hoverElement">
+            <button class="text-lg">Hover over the buttons to make me disappear!</button>
+        </div>
+
+        <div class="flex space-x-4 mt-4">
+            <button id="decrease" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300">
+                Decrease
+            </button>
+            <button id="increase" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700 transition duration-300">
+                Increase
+            </button>
+        </div>
+    </div>
+
+    <div class="bg-orange-500 rounded-full p-2 flex items-center justify-between">
+        <button class="bg-white rounded-full p-2 text-gray-700 hover:bg-gray-200 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+          </svg>
+        </button>
+        <span class="text-white font-bold">1</span>
+        <button class="bg-white rounded-full p-2 text-gray-700 hover:bg-gray-200 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+        </button>
+      </div>
+
+    <script>
+        const numberDisplay = document.getElementById('number');
+        const hoverElement = document.getElementById('hoverElement');
+        let currentNumber = 0;
+
+        document.getElementById('increase').addEventListener('click', () => {
+            currentNumber++;
+            numberDisplay.textContent = currentNumber;
+        });
+
+        document.getElementById('decrease').addEventListener('click', () => {
+            currentNumber--;
+            numberDisplay.textContent = currentNumber;
+        });
+
+        // Add hover effect to hide the element
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('mouseover', () => {
+                hoverElement.classList.add('opacity-0');
+            });
+            button.addEventListener('mouseout', () => {
+                hoverElement.classList.remove('opacity-0');
+            });
+        });
+    </script>
+
+</body>
+</html>
